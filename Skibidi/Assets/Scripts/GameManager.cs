@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start ()
+    private void Start()
     {
         player = FindObjectOfType<Player>();
         spawner = FindObjectOfType<Spawner>();
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     {
         gameSpeed = 0f;
         enabled = false;
-
+        
         player.gameObject.SetActive(false);
         spawner.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);

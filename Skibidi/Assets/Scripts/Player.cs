@@ -5,7 +5,11 @@ public class Player : MonoBehaviour
     private CharacterController character;
     private Vector3 direction;
 
-    public float gravity = 9.81f * 2f;
+    private float gravity = 10f;
+    private float fastFall = 2f;
+    private float highJump = 0.7f;
+
+    public float gravityMultiplier = 2f;
     public float jumpForce = 8f;
 
     private void Awake()
@@ -20,17 +24,34 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        direction += Vector3.down * gravity * Time.deltaTime;
+        float currentGrav = gravity;
 
-        if (character.isGrounded)
+        if(character.isGrounded)
         {
             direction = Vector3.down;
 
-            if (Input.GetButton("Jump"))
+            if(Input.GetButton("Jump"))
             {
                 direction = Vector3.up * jumpForce;
             }
         }
+
+        if(Input.GetKey(KeyCode.DownArrow))
+        {
+            currentGrav *= fastFall; 
+        }
+
+        if(Input.GetKeyDown(KeyCode.DownArrow) && direction.y > 0)
+        {
+            direction = Vector3.zero;
+        }
+
+        if(Input.GetKey(KeyCode.Space))
+        {
+            currentGrav *= highJump;
+        }
+
+        direction += Vector3.down * currentGrav * gravityMultiplier * Time.deltaTime;
 
         character.Move(direction * Time.deltaTime);
     }

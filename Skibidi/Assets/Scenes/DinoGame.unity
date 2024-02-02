@@ -711,8 +711,8 @@ MonoBehaviour:
     spawnChance: 0.1
   - prefab: {fileID: 1817079915500884345, guid: de99080cf2a538e46bfe44ea5732617c, type: 3}
     spawnChance: 0.05
-  minSpawnRate: 1
-  maxSpawnRate: 2
+  minSpawnRate: 0.81
+  maxSpawnRate: 2.08
 --- !u!4 &1381714526
 Transform:
   m_ObjectHideFlags: 0
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1d3c612b15513488df0a9013190d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 19.62
+  gravityMultiplier: 2
   jumpForce: 8
 --- !u!143 &1787947894
 CharacterController:
