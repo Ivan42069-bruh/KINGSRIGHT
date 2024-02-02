@@ -5,9 +5,9 @@ public class Player : MonoBehaviour
     private CharacterController character;
     private Vector3 direction;
 
-    private float gravity = 10f;
+    private float gravity = 15f;
     private float fastFall = 2f;
-    private float highJump = 0.7f;
+    private float highJump = 0.5f;
 
     public float gravityMultiplier = 2f;
     public float jumpForce = 8f;
