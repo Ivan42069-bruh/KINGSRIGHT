@@ -30,6 +30,7 @@ public class AnimatedSprite : MonoBehaviour
         {
             frame = 0;
         }
+        
 
         if (frame >= 0 && frame < sprites.Length) 
         {
